@@ -1,0 +1,173 @@
+[
+    {
+        "id": "88a90b4292b0b432",
+        "type": "HIDdevice",
+        "z": "790ee064fb6fd8f5",
+        "connection": "1b2529169cd15ef4",
+        "name": "",
+        "x": 170,
+        "y": 160,
+        "wires": [
+            [
+                "530590059488e1bb",
+                "9c6c61ebeba8c760"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "530590059488e1bb",
+        "type": "function",
+        "z": "790ee064fb6fd8f5",
+        "name": "function 3",
+        "func": "msg.payload = '/cue/2000/go';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 160,
+        "wires": [
+            [
+                "267131148e4b919f"
+            ]
+        ]
+    },
+    {
+        "id": "a9bd3b34bc4d669c",
+        "type": "osc",
+        "z": "790ee064fb6fd8f5",
+        "name": "",
+        "path": "",
+        "metadata": false,
+        "x": 930,
+        "y": 200,
+        "wires": [
+            [
+                "cb44fd9de15df1c6",
+                "c01807b46821e8c2",
+                "63ff251b703890ac"
+            ]
+        ]
+    },
+    {
+        "id": "cb44fd9de15df1c6",
+        "type": "udp out",
+        "z": "790ee064fb6fd8f5",
+        "name": "QLab",
+        "addr": "10.120.2.78",
+        "iface": "",
+        "port": "53000",
+        "ipv": "udp4",
+        "outport": "",
+        "base64": false,
+        "multicast": "false",
+        "x": 1090,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "c01807b46821e8c2",
+        "type": "debug",
+        "z": "790ee064fb6fd8f5",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "true",
+        "x": 1074.9999084472656,
+        "y": 244.60000610351562,
+        "wires": []
+    },
+    {
+        "id": "267131148e4b919f",
+        "type": "change",
+        "z": "790ee064fb6fd8f5",
+        "name": "/cue/301/go",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "/cue/301/go",
+                "tot": "str"
+            },
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 751.9999961853027,
+        "y": 169.99999141693115,
+        "wires": [
+            [
+                "a9bd3b34bc4d669c"
+            ]
+        ]
+    },
+    {
+        "id": "9c6c61ebeba8c760",
+        "type": "debug",
+        "z": "790ee064fb6fd8f5",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "63ff251b703890ac",
+        "type": "play-soundfile",
+        "z": "790ee064fb6fd8f5",
+        "name": "Audio",
+        "directory": "c142d68dd5020682",
+        "file": "Shantivan-3.wav",
+        "allow_multiple": false,
+        "x": 930,
+        "y": 360,
+        "wires": [
+            [
+                "f8ba6f19f3337c7e"
+            ]
+        ]
+    },
+    {
+        "id": "f8ba6f19f3337c7e",
+        "type": "debug",
+        "z": "790ee064fb6fd8f5",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1100,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "1b2529169cd15ef4",
+        "type": "HIDConfig",
+        "path": "/dev/hidraw0",
+        "name": "SHANTIVAN-1"
+    },
+    {
+        "id": "c142d68dd5020682",
+        "type": "soundfile-directory",
+        "directory": "./psm-shantivan"
+    }
+]f
