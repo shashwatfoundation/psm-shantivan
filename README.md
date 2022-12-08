@@ -9,8 +9,8 @@
 7) sudo nano /etc/udev/rules.d/51-blink1.rules
 8) copy following content
 
-SUBSYSTEM=="input", GROUP="input", MODE="0777"
-SUBSYSTEM=="usb", MODE:="777", GROUP="plugdev"
+SUBSYSTEM=="input", GROUP="input", MODE="0777"\
+SUBSYSTEM=="usb", MODE:="777", GROUP="plugdev"\
 KERNEL=="hidraw*", MODE="0777", GROUP="plugdev"
 
 9) sudo udevadm control --reload-rules
