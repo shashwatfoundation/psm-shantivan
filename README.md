@@ -2,7 +2,7 @@
 
 1) bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
 2) sudo systemctl enable nodered.service
-3) sudo apt-get install libudev-dev libusb-1.0-0-dev
+3) sudo apt-get install libudev-dev libusb-1.0-0-dev git
 4) cd .node-red
 5) npm i node-red-contrib-usbhid-reader
 6) sudo mkdir -p /etc/udev/rules.d
