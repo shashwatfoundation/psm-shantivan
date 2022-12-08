@@ -17,3 +17,8 @@ KERNEL=="hidraw*", MODE="0777", GROUP="plugdev"
 10) sudo groupadd -f input
 11) sudo gpasswd -a $USER input
 
+
+12) install > node-red-contrib-play-soundfile
+13) install > node-red-contrib-osc
+14) Copy flow.json
+
